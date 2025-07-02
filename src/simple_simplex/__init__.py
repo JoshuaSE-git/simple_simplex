@@ -5,6 +5,7 @@ from .solver import (
     optimize_json_format,
     optimize_max,
     optimize_min,
+    print_tableau,
 )
 from ._typing import FloatTableau
 
@@ -16,4 +17,5 @@ __all__ = [
     "optimize_max",
     "optimize_min",
     "FloatTableau",
+    "print_tableau",
 ]

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "simple_simplex"
-version = "0.0.1"
+version = "0.0.2"
 authors = [{ name = "Joshua Emralino", email = "jemralino@student.sdccd.edu" }]
 description = "A lightweight and educational Python package for solving linear programming problems using the Simplex method."
 readme = "README.md"

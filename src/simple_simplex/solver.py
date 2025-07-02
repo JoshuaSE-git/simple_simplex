@@ -231,7 +231,7 @@ def _select_pivot(tableau: FloatTableau) -> tuple[int, int]:
     pivot_column: FloatVector = tableau[:-1, pivot_column_index]
     rhs_column: FloatVector = tableau[:-1, -1]
     for column_value, rhs_value in zip(pivot_column, rhs_column):
-        if rhs_value / column_value > 0 and column_value**2 > 0:
+        if column_value**2 > 0 and rhs_value / column_value > 0:
             ratios.append(rhs_value / column_value)
         else:
             ratios.append(float("inf"))
@@ -390,7 +390,8 @@ def _display_final_results(tableau: FloatTableau, maximize: bool) -> None:
     for variable, value in solution_vars.items():
         if len(variable_values) == 0:
             variable_values += f"{variable}: {value:.2f}"
-        variable_values += f", {variable}: {value:.2f}"
+        else:
+            variable_values += f", {variable}: {value:.2f}"
 
     print(f"Optimal Value: {solution:.3f}")
     print(f"Solution Values: ({variable_values})")
