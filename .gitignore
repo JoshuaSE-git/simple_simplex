@@ -32,6 +32,7 @@ coverage.xml
 *.py,cover
 .pytest_cache/
 tests/__pycache__/
+examples/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints

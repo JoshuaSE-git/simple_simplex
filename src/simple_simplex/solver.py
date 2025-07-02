@@ -377,12 +377,23 @@ def _optimize(tableau, maximize=True):
             pivot_row, pivot_column, current_tableau
         )
 
-    solution_vars = _get_current_solution(current_tableau)
-    solution = float(current_tableau[-1, -1])
+    _display_final_results(current_tableau, maximize)
+
+
+def _display_final_results(tableau: FloatTableau, maximize: bool) -> None:
+    solution_vars = _get_current_solution(tableau)
+    solution = float(tableau[-1, -1])
     if not maximize:
         solution *= -1
 
-    print(f"Optimal Value: {solution}")
-    print(f"Solution Values: {solution_vars}")
+    variable_values: str = ""
+    for variable, value in solution_vars.items():
+        if len(variable_values) == 0:
+            variable_values += f"{variable}: {value:.2f}"
+        variable_values += f", {variable}: {value:.2f}"
+
+    print(f"Optimal Value: {solution:.3f}")
+    print(f"Solution Values: ({variable_values})")
+
     print("\nFinal Tableau")
-    print_tableau(current_tableau)
+    print_tableau(tableau)

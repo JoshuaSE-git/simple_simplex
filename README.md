@@ -13,8 +13,8 @@
 - 🧮 Solve both **maximization** and **minimization** problems  
 - ✅ Support for **≤** and **≥** constraints  
 - 📊 **Pivot step tracking** for visualization/debugging  
-- 🔁 Functional interface (no OOP needed)  
 - 🔗 Returns results as **JSON-compatible dicts**  
+- 📝 Display results as a neatly-formatted ASCII table
 - 🧩 Easy to embed in Flask or FastAPI backends  
 
 ---
@@ -34,7 +34,7 @@ pip install simple_simplex
 Pass in the number of variables, and number of constraints in the problem.
 
 ```python
-from simple_simplex import create_tableau, add_constraint, add_objective, optimize_json_format
+from simple_simplex import *
 
 tableau = create_tableau(number_of_variables=2, number_of_constraints=2)
 ```
@@ -110,6 +110,9 @@ The `optimize_json_format()` function returns a Python dictionary in the form of
 }
 ```
 
+The `optimize_max()` and `optimize_min()` functions display results as well as
+the final tableau.
+
 ---
 
 ## 📚 Example Problem
@@ -137,6 +140,13 @@ solution_dict = optimize_json_format(tableau, maximize=True)
 # OR to print solution to stdout
 optimize_max(tableau)
 ```
+
+---
+
+## 📏 To-Do
+
+- Better input handling
+- Better error handling
 
 ---
 

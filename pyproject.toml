@@ -4,21 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "simple_simplex"
-version = "0.1.0"
+version = "0.0.1"
 authors = [{ name = "Joshua Emralino", email = "jemralino@student.sdccd.edu" }]
-description = "A lightweight and educational Python package for solving linear programming problems using the Simplex method. Includes support for JSON output, pivot step tracking, and easy integration into backend or visualization tools."
+description = "A lightweight and educational Python package for solving linear programming problems using the Simplex method."
 readme = "README.md"
 license = { file = "LICENSE" }
-dependencies = [
-    "numpy >=1.21",
-    "prettytable >=3.0"
-]
+dependencies = ["numpy >=1.21", "prettytable >=3.0"]
 requires-python = ">=3.8"
 keywords = ["simplex", "linear-programming", "optimization", "solver"]
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Intended Audience :: Science/Research",
-    "Topic :: Scientific/Engineering :: Mathematics",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Mathematics",
 ]
+
+[project.urls]
+Homepage = "https://github.com/JoshuaSE-git/simple_simplex"
+Issues = "https://github.com/JoshuaSE-git/simple_simplex/issues"
